@@ -4,12 +4,12 @@ export default function Converter(Props) {
   return (
     <>
       <div className="h-screen bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-emerald-100 via-fuchsia-100 to-sky-200">
-        <h1 className="text-center text-[42px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400">Weather Forcast</h1>
-        <div className=" w-[31%] flex flex-col shadow-2xl shadow-black/30 m-auto p-4 my-6 backdrop-blur-2xl bg-[white]/20 rounded-xl">
-          <div className="w-[60%] m-auto p-[2px] rounded-full max-w-sm bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+        <h1 className="text-center sm:text-[42px] text-[34px] pt-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400">Weather Forcast</h1>
+        <div className=" sm:w-[31%] flex flex-col shadow-2xl shadow-black/30 m-auto p-4 my-6 backdrop-blur-2xl bg-[white]/20 rounded-xl w-[90%] ">
+          <div className="sm:w-[60%] w-[80%] m-auto p-[2px] rounded-full max-w-sm bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
             <input type="text" onChange={Props.func} className="bg-white/90 w-full rounded-full focus:outline-none p-1 pl-4 text-[16px]" placeholder="Enter Your City Name" name="name" />
           </div>
-          <div className=" relative p-4 w-[100%] h-[300px] text-center flex flex-wrap mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400">
+          <div className="relative p-4 w-[100%] h-[300px] text-center flex flex-wrap mt-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400">
             {!data.main ?
               (
                 <>
@@ -60,39 +60,39 @@ export default function Converter(Props) {
               ) : (
                 <>
                   <div className="w-[50%] p-2 text-center ">
-                    <h1 className="text-[44px] mt-6 mb-1 font-semibold ">{data.main.temp}<span className="text-[34px]">&#176;C</span></h1>
+                    <h1 className="sm:text-[44px] text-[34px] mt-6 mb-1 font-semibold ">{data.main.temp}<span className="text-[34px]">&#176;C</span></h1>
                     <h3 className="text-[22px]">{data.name}</h3>
                     <p className="text-[14px] p-1 "> {data.sys.country}</p>
                   </div>
                   <div className="w-[50%]">
-                    <div className="w-[100%] h-[130px] p-2">
-                      {data.weather[0].main === "Clouds" ? <img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/Clouds.png')} alt='mo' />
-                      : data.weather[0].main === "Haze" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/Haze.png')} alt='mo' />
-                      : data.weather[0].main === "Rainy" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/Rainy.png')} alt='mo' />
-                      : data.weather[0].main === "Sunny" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/Sunny.png')} alt='mo' />
-                      : data.weather[0].main === "Clear" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/clear (2).png')} alt='mo' />
-                      : data.weather[0].main === "Thunder" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/thunder.png')} alt='mo' />
-                      : data.weather[0].main === "Smoke" ?<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/smoke.png')} alt='mo' />
+                    <div className="w-[100%] sm:h-[130px] h-[100px] p-2">
+                      {data.weather[0].main === "Clouds" ? <img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/Clouds.png')} alt='mo' />
+                      : data.weather[0].main === "Haze" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/Haze.png')} alt='mo' />
+                      : data.weather[0].main === "Rainy" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/Rainy.png')} alt='mo' />
+                      : data.weather[0].main === "Sunny" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/Sunny.png')} alt='mo' />
+                      : data.weather[0].main === "Clear" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/clear (2).png')} alt='mo' />
+                      : data.weather[0].main === "Thunder" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/thunder.png')} alt='mo' />
+                      : data.weather[0].main === "Smoke" ?<img className="w-[100%] sm:h-[120px] h-[90px] object-contain" src={require('../weatherIcons/smoke.png')} alt='mo' />
                       :<img className="w-[100%] h-[120px] object-contain" src={require('../weatherIcons/Sunny.png')} alt='mo' />}
                       
                     </div>
-                    <h3 className="text-[28px]">{data.weather[0].main}</h3>
+                    <h3 className="sm:text-[28px] text-[24px]">{data.weather[0].main}</h3>
                   </div>
                   <div className="w-[100%] flex justify-between mt-10">
-                    <div className="w-[50%] p-2 text-[15px]">
+                    <div className="w-[40%] sm:w-[50%] p-2 sm:text-[15px] text-[12px]">
                       <p><span>Min : </span>{data.main.temp_min}<span className="text-[14px]">&#176;C</span></p>
                       <p><span>Humadity : </span>{data.main.humidity}%</p>
                     </div>
-                    <div className="w-[50%]  p-2 text-[15px]">
+                    <div className="w-[60%] sm:w-[50%]  p-2 sm:text-[15px] text-[12px]">
                       <p><span>Max : </span>{data.main.temp_max}<span className="text-[14px]">&#176;C</span></p>
-                      <p><span>Wind speed :</span> {data.wind.speed} mph</p>
+                      <p><span>Wind speed :</span> {data.wind.speed}mph</p>
                     </div>
-
                   </div>
                 </>
               )}
           </div>
         </div>
+        <footer className='text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400 '>Created by Junaid Sultan </footer>
       </div>
     </>
   )
